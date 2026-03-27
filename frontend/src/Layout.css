@@ -1,0 +1,265 @@
+/* Root layout container */
+.layout-root {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+/* Tenant not found fallback */
+.layout-tenant-not-found {
+  padding: 2rem;
+}
+
+/* Header */
+.layout-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* Header inner container */
+.layout-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo section */
+.layout-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.layout-logo-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.layout-logo-text {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 18px;
+}
+
+/* Nav */
+.layout-nav {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.layout-nav-inner {
+  display: flex;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.layout-nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  padding: 0.25rem 0;
+}
+
+/* right side: HeaderRight + toggle button */
+.layout-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* mobile toggle button */
+.layout-nav-toggle {
+  display: none; /* show only on small screens */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* minimal burger icon */
+.layout-nav-toggle .burger {
+  width: 20px;
+  height: 2px;
+  background: #4b5563;
+  position: relative;
+  display: inline-block;
+}
+
+.layout-nav-toggle .burger::before,
+.layout-nav-toggle .burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: #4b5563;
+  transition: transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
+}
+.layout-nav-toggle .burger::before {
+  top: -6px;
+}
+.layout-nav-toggle .burger::after {
+  top: 6px;
+}
+.layout-nav-toggle .burger.open {
+  background: transparent;
+}
+.layout-nav-toggle .burger.open::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.layout-nav-toggle .burger.open::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+
+/* Footer */
+.layout-footer {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 1.25rem 1.25rem 2rem;
+}
+
+.layout-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(55, 65, 81, 0.9);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* --------- RESPONSIVE BREAKPOINTS --------- */
+
+/* Medium screens: slightly reduce paddings/font size where needed */
+@media (max-width: 900px) {
+  .layout-header-inner {
+    padding: 0.75rem 1rem;
+  }
+
+  .layout-nav-inner {
+    padding: 0.4rem 1rem;
+  }
+
+  .layout-logo-text {
+    font-size: 16px;
+  }
+}
+
+/* Small tablets & large phones */
+@media (max-width: 768px) {
+  .layout-header-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .layout-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  .layout-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .layout-nav-inner {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .layout-logo-text {
+    font-size: 15px;
+  }
+
+  .layout-footer {
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .layout-nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .layout-nav-link {
+    width: 100%;
+  }
+}
+
+/* desktop: normal row layout */
+@media (min-width: 768px) {
+  .layout-nav-inner {
+    flex-wrap: wrap;
+  }
+}
+
+/* mobile: stack logo + right; nav collapses into dropdown */
+@media (max-width: 767px) {
+  .layout-header-inner {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .layout-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid rgba(229, 231, 235, 0.9);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+    transform: translateY(-200%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .layout-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .layout-nav-inner {
+    flex-direction: column;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .layout-nav-link {
+    padding: 0.5rem 0;
+  }
+
+  .layout-nav-toggle {
+    display: inline-flex;
+  }
+
+   .layout-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}

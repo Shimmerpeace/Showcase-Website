@@ -1,0 +1,11 @@
+/* App.css*/
+main {
+  padding-top: 80px; /* match header height */
+}
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 72px;
+  }
+}
+

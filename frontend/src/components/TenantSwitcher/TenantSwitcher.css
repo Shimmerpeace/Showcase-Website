@@ -1,0 +1,43 @@
+.tenant-switcher {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.9);
+  color: #e5e7eb;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
+}
+
+.tenant-switcher-label {
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.tenant-switcher-select {
+  background: transparent;
+border: 1px solid rgba(249, 250, 251, 0.4);
+border-radius: 999px;
+color: #f9fafb;
+ font-size: 12px;
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+}
+
+/* responsiveness: small screens */
+@media (max-width: 480px) {
+  .tenant-switcher {
+    padding: 0.2rem 0.5rem;
+    gap: 4px;
+  }
+
+  .tenant-switcher-label {
+    font-size: 11px;
+  }
+
+  .tenant-switcher-select {
+    font-size: 11px;
+    padding: 0.08rem 0.4rem;
+  }
+}

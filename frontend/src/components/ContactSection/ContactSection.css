@@ -1,0 +1,88 @@
+.contact-section {
+  padding: 1.5rem 1.25rem 0.5rem;
+}
+
+.contact-section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Text content */
+.contact-info {
+  max-width: 36rem;
+}
+
+.contact-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.contact-details {
+  font-size: 14px;
+  color: rgba(55, 65, 81, 0.98);
+  line-height: 1.6;
+  display: grid;
+  gap: 4px;
+}
+
+/* Shared link style */
+.contact-link {
+  text-decoration: none;
+}
+
+/* Social column */
+.contact-social {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background-color: rgba(15, 23, 42, 0.03);
+  border: 1px dashed rgba(148, 163, 184, 0.9);
+}
+
+.contact-social-title {
+  font-size: 15px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.contact-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+.contact-social-button {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+/* ------------ RESPONSIVE BREAKPOINTS ------------ */
+
+/* Tablets and up: two columns */
+@media (min-width: 768px) {
+  .contact-section-inner {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+}
+
+/* Small screens tweak */
+@media (max-width: 480px) {
+  .contact-details {
+    font-size: 13px;
+  }
+
+  .contact-social-title {
+    font-size: 14px;
+  }
+
+  .contact-social-links {
+    font-size: 13px;
+  }
+}

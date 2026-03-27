@@ -1,0 +1,50 @@
+.about-section {
+  padding: 1.5rem 1.25rem 1.5rem;
+}
+
+.about-section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(243, 244, 246, 0.96)
+  );
+  border: 1px solid rgba(209, 213, 219, 0.8);
+  padding: 1.35rem 1.4rem;
+}
+
+.about-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.about-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(55, 65, 81, 0.98);
+}
+
+/* Small screens: slightly tighter spacing */
+@media (max-width: 480px) {
+  .about-section-inner {
+    padding: 1.2rem 1.1rem;
+  }
+
+  .about-title {
+    font-size: 16px;
+  }
+
+  .about-body {
+    font-size: 13px;
+  }
+}
+
+/* Large screens: slightly more breathing room */
+@media (min-width: 1024px) {
+  .about-title {
+    font-size: 19px;
+  }
+}
