@@ -96,7 +96,7 @@ const Layout = ({ HeaderRight }) => {
           <span>
             © {new Date().getFullYear()} {name}. All rights reserved.
           </span>
-          <span>Powered by Your Product Showcase Platform</span>
+          <span>Powered by Shimmer Business Showcase Platform</span>
         </div>
       </footer>
     </div>
