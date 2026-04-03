@@ -21,18 +21,18 @@
 
 ## About the Project
 
-Shimmer Business Showcase Platform is a frontend platform designed to generate personalized product showcase websites for small businesses. 
+Shimmer Business Showcase Platform is a frontend platform designed to generate personalized product showcase websites for small businesses.
 Instead of building a separate site from scratch for every business, each business is defined as a tenant in a single configuration file and instantly get a branded, route-based website for it.
 
-The app is built to feel like a real product, not just a demo. 
-It includes a sticky header, tenant switcher, grouped tenants, dynamic pages, responsive cards, and a clean visual hierarchy that works well for portfolios and client presentations.
+The app is built to feel like a real product, not just a demo.
+It includes a sticky header, tenant switcher, grouped tenants, dynamic pages, responsive cards, and a clean visual hierarchy that works well for portfolios and client presentations. It also includes a fully-functional admin panel for managing tenants without touching code.
 
 ---
 
 ## Core Features
 
 - Multi-tenant architecture for multiple businesses in one app.
-- Grouped tenants such as Food, Tech, other categories.
+- Grouped tenants such as Food, Tech, and other categories.
 - Personalized branding per tenant, including colors, logo text, and hero content.
 - Sticky top header with a tenant switcher.
 - Dedicated router pages per tenant:
@@ -43,15 +43,31 @@ It includes a sticky header, tenant switcher, grouped tenants, dynamic pages, re
 - Dynamic URL support using React Router.
 - Responsive product/service showcase cards.
 - Clean, modern, portfolio-ready UI.
+- Tenant Admin Management:
+  - View all businesses grouped by category.
+  - Edit existing tenants.
+  - Delete tenants.
+  - Live preview with real-time updates.
+- Create New Tenant:
+  - Quick business setup with auto-ID generation
+  - Choose from predefined groups (Food, Tech, Health Care, etc.).
+  - Set brand colors and basic hero content.
+- Edit Tenant Details:
+  - Live form editing for:
+   - Business name & logo.
+   - Brand colors (color picker).
+   - Group assignment.
+   - Hero heading & subheading.
+  - Changes persist in localStorage and update the live site instantly.
 
 ---
 
 ## How It Works
 
-Each business is stored as a tenant object inside `src/config/tenants.js`. 
+Each business is stored as a tenant object inside `src/config/tenants.js`.
 A tenant includes its own brand colors, hero section, about text, products, contact details, and group name.
 
-The app reads the active tenant from the URL, then renders the matching layout and pages for that business. 
+The app reads the active tenant from the URL, then renders the matching layout and pages for that business.
 The tenant switcher lets you jump between businesses, while the router handles each tenant’s internal pages like a standalone website.
 
 This setup makes the app easy to scale because new businesses can be added by editing configuration instead of duplicating components.
@@ -98,7 +114,6 @@ The `group` field allows tenants to be organized into categories like:
 - Fashion
 - Beauty
 
-
 ---
 
 ## Routes
@@ -119,6 +134,12 @@ Each tenant has its own route-based website structure:
 
 This makes each tenant feel like a separate branded website while still sharing the same codebase.
 
+While the route-based structure for the admin are:
+
+- `/admin/tenants` → Tenant Management
+- `/admin/new-tenant` → Create New Tenant
+- `/admin/edit/:tenantId` → Edit Tenant Details
+
 ---
 
 ## Tech Stack
@@ -128,6 +149,11 @@ This makes each tenant feel like a separate branded website while still sharing 
 - React Router DOM
 - Inline component-based styling
 - JavaScript
+- React Hook Form for validation and state management
+- LocalStorage persistence (production-ready for demos)
+- React Router → nested admin routes
+- Real-time sync between admin and public site
+- Responsive design → matching main app
 
 Upgrades to be later added if possible:
 
@@ -137,72 +163,88 @@ Upgrades to be later added if possible:
 - Headless CMS
 - Firebase or Supabase backend
 - Admin dashboard for tenant management
+- Swap localStorage for API calls: 
+
+`localStorage.getItem() → fetch("/api/tenants")`
+`localStorage.setItem() → fetch("/api/tenants", { method: "PUT" })`
+
 
 ---
 
 ## Project Structure
 
-  📦src
- ┣ 📂assets
- ┃ ┣ 📜backery.jpg
- ┃ ┣ 📜consultation.jpg
- ┃ ┣ 📜croissant.jpg
- ┃ ┣ 📜customcake.jpg
- ┃ ┣ 📜delivery1.jpg
- ┃ ┣ 📜delivery2.jpg
- ┃ ┣ 📜delivery3.jpg
- ┃ ┣ 📜delivery4.jpg
- ┃ ┣ 📜dreamHouse.jpg
- ┃ ┣ 📜familyCare.jpg
- ┃ ┣ 📜gardenHome.jpg
- ┃ ┣ 📜healthScreen.jpg
- ┃ ┣ 📜IMG.jpg
- ┃ ┣ 📜mealPlan.jpg
- ┃ ┣ 📜salesFunnel.jpg
- ┃ ┣ 📜sourdough.jpg
- ┃ ┣ 📜starterPackage.jpg
- ┃ ┣ 📜studioCondo.jpg
- ┃ ┣ 📜twoBedroom.jpg
- ┃ ┣ 📜webBusiness.jpg
- ┃ ┗ 📜webCare.jpg
- ┣ 📂components
- ┃ ┣ 📂AboutSection
- ┃ ┃ ┣ 📜AboutSection.css
- ┃ ┃ ┗ 📜AboutSection.jsx
- ┃ ┣ 📂ContactSection
- ┃ ┃ ┣ 📜ContactSection.css
- ┃ ┃ ┗ 📜ContactSection.jsx
- ┃ ┣ 📂Footer
- ┃ ┃ ┣ 📜Footer.css
- ┃ ┃ ┗ 📜Footer.jsx
- ┃ ┣ 📂Header
- ┃ ┃ ┣ 📜Header.css
- ┃ ┃ ┗ 📜Header.jsx
- ┃ ┣ 📂HeroSection
- ┃ ┃ ┣ 📜HeroSection.css
- ┃ ┃ ┗ 📜HeroSection.jsx
- ┃ ┣ 📂ProductCard
- ┃ ┃ ┣ 📜ProductCard.css
- ┃ ┃ ┗ 📜ProductCard.jsx
- ┃ ┣ 📂ProductGrid
- ┃ ┃ ┣ 📜ProductGrid.css
- ┃ ┃ ┗ 📜ProductGrid.jsx
- ┃ ┗ 📂TenantSwitcher
- ┃ ┃ ┣ 📜TenantSwitcher.css
- ┃ ┃ ┗ 📜TenantSwitcher.jsx
- ┣ 📂config
- ┃ ┗ 📜tenants.js
- ┣ 📂pages
- ┃ ┣ 📜TenantAboutPage.jsx
- ┃ ┣ 📜TenantContactPage.jsx
- ┃ ┣ 📜TenantHomePage.jsx
- ┃ ┗ 📜TenantProductsPage.jsx
- ┣ 📜App.css
- ┣ 📜App.jsx
- ┣ 📜index.css
- ┣ 📜Layout.css
- ┣ 📜Layout.jsx
- ┗ 📜main.jsx
+src
+ ┣ assets
+ ┃ ┣ backery.jpg
+ ┃ ┣ consultation.jpg
+ ┃ ┣ croissant.jpg
+ ┃ ┣ customcake.jpg
+ ┃ ┣ delivery1.jpg
+ ┃ ┣ delivery2.jpg
+ ┃ ┣ delivery3.jpg
+ ┃ ┣ delivery4.jpg
+ ┃ ┣ dreamHouse.jpg
+ ┃ ┣ familyCare.jpg
+ ┃ ┣ gardenHome.jpg
+ ┃ ┣ healthScreen.jpg
+ ┃ ┣ IMG.jpg
+ ┃ ┣ mealPlan.jpg
+ ┃ ┣ salesFunnel.jpg
+ ┃ ┣ sourdough.jpg
+ ┃ ┣ starterPackage.jpg
+ ┃ ┣ studioCondo.jpg
+ ┃ ┣ twoBedroom.jpg
+ ┃ ┣ webBusiness.jpg
+ ┃ ┗ webCare.jpg
+ ┣ components
+ ┃ ┣ AboutSection
+ ┃ ┃ ┣ AboutSection.css
+ ┃ ┃ ┗ AboutSection.jsx
+ ┃ ┣ AdminLayout
+ ┃ ┃ ┣ AdminLayout.css
+ ┃ ┃ ┗ AdminLayout.jsx
+ ┃ ┣ ContactSection
+ ┃ ┃ ┣ ContactSection.css
+ ┃ ┃ ┗ ContactSection.jsx
+ ┃ ┣ Footer
+ ┃ ┃ ┣ Footer.css
+ ┃ ┃ ┗ Footer.jsx
+ ┃ ┣ Header
+ ┃ ┃ ┣ Header.css
+ ┃ ┃ ┗ Header.jsx
+ ┃ ┣ HeroSection
+ ┃ ┃ ┣ HeroSection.css
+ ┃ ┃ ┗ HeroSection.jsx
+ ┃ ┣ ProductCard
+ ┃ ┃ ┣ ProductCard.css
+ ┃ ┃ ┗ ProductCard.jsx
+ ┃ ┣ ProductGrid
+ ┃ ┃ ┣ ProductGrid.css
+ ┃ ┃ ┗ ProductGrid.jsx
+ ┃ ┗ TenantSwitcher
+ ┃ ┃ ┣ TenantSwitcher.css
+ ┃ ┃ ┗ TenantSwitcher.jsx
+ ┣ config
+ ┃ ┗ tenants.js
+ ┣ pages
+ ┃ ┣ Admin
+ ┃ ┃ ┣ AdminEditTenantPage.css
+ ┃ ┃ ┣ AdminEditTenantPage.jsx
+ ┃ ┃ ┣ AdminNewTenantPage.css
+ ┃ ┃ ┣ AdminNewTenantPage.jsx
+ ┃ ┃ ┣ AdminTenantsPage.css
+ ┃ ┃ ┗ AdminTenantsPage.jsx
+ ┃ ┗ Tenant
+ ┃ ┃ ┣ TenantAboutPage.jsx
+ ┃ ┃ ┣ TenantContactPage.jsx
+ ┃ ┃ ┣ TenantHomePage.jsx
+ ┃ ┃ ┗ TenantProductsPage.jsx
+ ┣ App.css
+ ┣ App.jsx
+ ┣ index.css
+ ┣ Layout.css
+ ┣ Layout.jsx
+ ┗ main.jsx
 
 ---
 
@@ -240,6 +282,11 @@ http://localhost:5173/zella-bakery
 http://localhost:5173/zee-digital
 </code>
 
+You can navigate directly to the admin route such as:
+
+<code>
+http://localhost:5173/admin
+</code>
 ---
 
 ## Customization
@@ -300,7 +347,6 @@ Each tenant can have its own:
 
 ## Roadmap
 
-- Add editable admin dashboard for tenants.
 - Allow tenants to upload their own logo and images.
 - Add CMS integration for product and content management.
 - Add search and filtering for products.
@@ -335,5 +381,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Author
 
-Built by Peace Efeh Ogbata 
+Built by Peace Efeh Ogbata
 Frontend developer focused on React, CSS and modern web experiences.

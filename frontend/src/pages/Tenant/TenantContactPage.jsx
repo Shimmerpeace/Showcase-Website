@@ -1,6 +1,6 @@
 // src/pages/TenantContactPage.jsx
 import { useOutletContext } from "react-router-dom";
-import ContactSection from "../components/ContactSection/ContactSection";
+import ContactSection from "../../components/ContactSection/ContactSection";
 
 const TenantContactPage = () => {
   const { tenant } = useOutletContext();

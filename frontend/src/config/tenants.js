@@ -81,7 +81,7 @@ export const tenants = {
       },
     ],
     contact: {
-      address: "Flinger Str. 123, 40213 Düsseldorf",
+      address: "Zimtzimmer Str. 123, 41113 Düsseldorf",
       phone: "+49 211 123456",
       email: "hello@zellabakery.de",
       website: "https://zellabakery.de",
@@ -149,8 +149,8 @@ export const tenants = {
       },
     ],
     contact: {
-      address: "Media Harbor, Düsseldorf",
-      phone: "+49 211 987654",
+      address: "Zimtzimmer Str. 123, 41113 Düsseldorf",
+      phone: "+49 211 123456",
       email: "team@zeedigital.studio",
       website: "https://zeedigital.studio",
       openingHours: "Mon–Fri: 9:00 – 17:30",
@@ -215,8 +215,8 @@ export const tenants = {
       },
     ],
     contact: {
-      address: "Kaiserstraße 45, 40212 Düsseldorf",
-      phone: "+49 211 456789",
+      address: "Zimtzimmer Str. 123, 41113 Düsseldorf",
+      phone: "+49 211 123456",
       email: "info@harmony-clinic.de",
       website: "https://harmony-clinic.de",
       openingHours: "Mon–Fri: 8:00 – 18:00, Sat: 9:00 – 13:00",
@@ -282,8 +282,8 @@ export const tenants = {
       },
     ],
     contact: {
-      address: "Berger Str. 78, 40213 Düsseldorf",
-      phone: "+49 211 789012",
+      address: "Zimtzimmer Str. 123, 41113 Düsseldorf",
+      phone: "+49 211 123456",
       email: "hello@urban-properties.de",
       website: "https://urban-properties.de",
       openingHours: "Mon–Sat: 9:00 – 18:00",
@@ -349,8 +349,8 @@ export const tenants = {
       },
     ],
     contact: {
-      address: "Immermannstraße 22, 40210 Düsseldorf",
-      phone: "+49 211 345678",
+      address: "Zimtzimmer Str. 123, 41113 Düsseldorf",
+      phone: "+49 211 123456",
       email: "info@swift-movers.de",
       website: "https://swift-movers.de",
       openingHours: "Mon–Sat: 7:00 – 20:00",

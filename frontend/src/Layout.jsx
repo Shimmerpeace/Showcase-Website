@@ -68,6 +68,20 @@ const Layout = ({ HeaderRight }) => {
               >
                 Contact
               </Link>
+              <Link
+                to="/admin/tenants"
+                style={{
+                  padding: "0.5rem 1rem",
+                  background: "#6B7280",
+                  color: "#fff",
+                  textDecoration: "none",
+                  borderRadius: 6,
+                  fontSize: 13,
+                  fontWeight: 500,
+                }}
+              >
+                Admin
+              </Link>
             </div>
           </nav>
 

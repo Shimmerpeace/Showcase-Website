@@ -20,7 +20,3 @@ button {
   font-family: inherit;
 }
 
-/* mild hover for product images */
-.product-card-image:hover {
-  transform: scale(1.03);
-}

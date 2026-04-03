@@ -1,9 +1,9 @@
 // src/pages/TenantHomePage.jsx
 import { useOutletContext } from "react-router-dom";
-import HeroSection from "../components/HeroSection/HeroSection";
-import ProductGrid from "../components/ProductGrid/ProductGrid";
-import AboutSection from "../components/AboutSection/AboutSection";
-import ContactSection from "../components/ContactSection/ContactSection";
+import HeroSection from "../../components/HeroSection/HeroSection";
+import ProductGrid from "../../components/ProductGrid/ProductGrid";
+import AboutSection from "../../components/AboutSection/AboutSection";
+import ContactSection from "../../components/ContactSection/ContactSection";
 
 const TenantHomePage = () => {
   const { tenant } = useOutletContext();

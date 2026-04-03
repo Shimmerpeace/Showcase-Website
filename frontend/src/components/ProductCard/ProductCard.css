@@ -25,7 +25,6 @@
   transition: transform 220ms ease;
 }
 
-/* You already have hover scale globally, this will work together */
 .product-card-image:hover {
   transform: scale(1.03);
 }

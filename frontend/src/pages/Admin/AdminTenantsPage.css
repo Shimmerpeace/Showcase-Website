@@ -1,0 +1,148 @@
+.admin-tenants-page {
+  padding: 1rem 0;
+}
+
+.admin-tenants-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.admin-tenants-page__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.admin-tenants-page__groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-tenants-page__group-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-tenants-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.admin-tenants-page__card {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+.admin-tenants-page__tenant-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-tenants-page__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.admin-tenants-page__tenant-meta {
+  min-width: 0;
+}
+
+.admin-tenants-page__tenant-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-tenants-page__tenant-id {
+  color: #6b7280;
+  margin: 0.25rem 0 0;
+  word-break: break-word;
+}
+
+.admin-tenants-page__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.admin-tenants-page__edit-btn,
+.admin-tenants-page__delete-btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.admin-tenants-page__edit-btn {
+  background: #80b17a;
+  color: #fff;
+}
+
+.admin-tenants-page__delete-btn {
+  background: #cc9292;
+  color: #fff;
+}
+
+.admin-tenants-page__edit-btn:hover,
+.admin-tenants-page__delete-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-tenants-page__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-tenants-page__title {
+    font-size: 1.375rem;
+  }
+
+  .admin-tenants-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-tenants-page__card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-tenants-page__actions {
+    flex-direction: column;
+  }
+
+  .admin-tenants-page__edit-btn,
+  .admin-tenants-page__delete-btn {
+    width: 100%;
+  }
+}
