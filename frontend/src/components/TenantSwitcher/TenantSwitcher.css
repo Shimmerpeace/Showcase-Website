@@ -17,12 +17,17 @@
 
 .tenant-switcher-select {
   background: transparent;
-border: 1px solid rgba(249, 250, 251, 0.4);
-border-radius: 999px;
-color: #f9fafb;
- font-size: 12px;
+  border: 1px solid rgba(251, 249, 249, 0.4);
+  border-radius: 999px;
+  color: #f9fafb;
+  font-size: 12px;
   padding: 0.1rem 0.5rem;
   cursor: pointer;
+}
+
+.tenant-switcher-select optgroup {
+  background-color: #111827;
+  color: #f9fafb;
 }
 
 /* responsiveness: small screens */
