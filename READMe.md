@@ -1,4 +1,8 @@
- <h1>Shimmer Business Showcase Platform<hr/>
+ <h1>Shimmer Business Showcase Platform</h1>
+ <hr/>
+![Live Demo](https://showcase-website-blond.vercel.app/)
+<br/>
+<br/>
  <p>This app is a sleek, multi-tenant product showcase platform for small businesses — each tenant gets its own branded website, grouped by business type, with dedicated pages and a personalized header experience.</p>
 
 ---
