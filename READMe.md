@@ -176,7 +176,7 @@ Upgrades to be later added if possible:
 ---
 
 ## Project Structure
-
+```text
 src
  ┣ assets
  ┃ ┣ backery.jpg
@@ -249,7 +249,7 @@ src
  ┣ Layout.css
  ┣ Layout.jsx
  ┗ main.jsx
-
+```
 ---
 
 ## Getting Started
